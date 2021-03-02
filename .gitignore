@@ -35,3 +35,7 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+
+
+# https://github.com/github/gitignore/blob/master/Terraform.gitignore
