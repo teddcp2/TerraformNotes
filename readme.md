@@ -22,6 +22,7 @@ terraform refresh                      -> refreshes the current state of resourc
 
 - Basics -> Deploying Infrastructure with Terraform
 - Adding Variables and outputs -> Read, Generate, Modify configs
+- Conditionals and dynamic_blocks -> count, locals, dynamic, functions
 
 ### 4 ways to pass variables
 
