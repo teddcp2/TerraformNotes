@@ -36,7 +36,6 @@ terraform plan -refresh=false -target=aws_security_group.allow_ssh_conn  -> way 
 - Modules
 - Workspaces
 
-
 ---
 
 ### 4 ways to pass variables
@@ -108,3 +107,17 @@ resource "aws_iam_user" "the-accounts" {
 
 - dynamic block > [link](https://www.terraform.io/docs/language/expressions/dynamic-blocks.html)
 - for block > [link](https://www.terraform.io/docs/language/expressions/for.html)
+
+### TerraForm Workspace commands
+
+- by default, 'default' workspce will be present
+
+```
+terraform workspace -h
+terraform workspace show
+terraform workspace new dev
+terraform workspace new prd
+terraform workspace list
+terraform workspace select dev
+
+```
