@@ -31,6 +31,8 @@ terraform plan -refresh=false -target=aws_security_group.allow_ssh_conn  -> way 
 - Adding Variables and outputs -> Read, Generate, Modify configs
 - Conditionals and dynamic_blocks -> count, locals, dynamic, functions
 
+---
+
 ### 4 ways to pass variables
 
 1. passing through cmd `terraform plan -var "instaceType=t2.micro"`
@@ -66,3 +68,9 @@ export TF_LOG_PATH=/tmp/crash.log
 export TF_LOG=TRACE
 # warn, info, error, debug, trace
 ```
+
+### Provisoners
+
+- running remote-exec more than once [link1](https://stackoverflow.com/a/41310989/12210002) [link2](https://stackoverflow.com/a/57472281/12210002) [link3](https://stackoverflow.com/a/56040653/12210002)
+
+- connection settings - [link](https://www.terraform.io/docs/language/resources/provisioners/connection.html)
