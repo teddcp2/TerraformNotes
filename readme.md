@@ -23,6 +23,8 @@ terraform taint aws_instance.myec2     -> tainting a resource i.e on next plan i
 
 
 terraform plan -refresh=false -target=aws_security_group.allow_ssh_conn  -> way to avoaid numerous api calls while planning[Large infra]
+
+
 ```
 
 ## Guides
@@ -30,6 +32,10 @@ terraform plan -refresh=false -target=aws_security_group.allow_ssh_conn  -> way 
 - Basics -> Deploying Infrastructure with Terraform
 - Adding Variables and outputs -> Read, Generate, Modify configs
 - Conditionals and dynamic_blocks -> count, locals, dynamic, functions
+- Provsioners -> Local and Remote Provisioners
+- Modules
+- Workspaces
+
 
 ---
 
@@ -74,3 +80,31 @@ export TF_LOG=TRACE
 - running remote-exec more than once [link1](https://stackoverflow.com/a/41310989/12210002) [link2](https://stackoverflow.com/a/57472281/12210002) [link3](https://stackoverflow.com/a/56040653/12210002)
 
 - connection settings - [link](https://www.terraform.io/docs/language/resources/provisioners/connection.html)
+
+### For-Each ([link](https://learn.hashicorp.com/tutorials/terraform/for-each?in=terraform/0-13&utm_source=WEBSITE&utm_medium=WEB_IO&utm_offer=ARTICLE_PAGE&utm_content=DOCS))
+
+```
+
+# Map:
+
+resource "azurerm_resource_group" "rg" {
+  for_each = {
+    a_group = "eastus"
+    another_group = "westus2"
+  }
+  name     = each.key
+  location = each.value
+}
+
+# Set of strings:
+
+resource "aws_iam_user" "the-accounts" {
+  for_each = toset( ["Todd", "James", "Alice", "Dottie"] )
+  name     = each.key
+}
+```
+
+### Dynamic and for block
+
+- dynamic block > [link](https://www.terraform.io/docs/language/expressions/dynamic-blocks.html)
+- for block > [link](https://www.terraform.io/docs/language/expressions/for.html)
