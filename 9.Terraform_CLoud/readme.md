@@ -5,6 +5,6 @@
 
 ## Running in Terraform cloud
 
-![Running in Terraform Cloud](./9.Terraform_CLoud/running_in_remote_cloud.PNG)
+![Running in Terraform Cloud](https://github.com/teddcp2/TerraformNotes/blob/master/9.Terraform_CLoud/running_in_remote_cloud.PNG)
 
-![Passing Tokens in AWS](./9.Terraform_CLoud/passing_tokens_for_aws.PNG)
+![Passing Tokens in AWS](https://github.com/teddcp2/TerraformNotes/blob/master/9.Terraform_CLoud/passing_tokens_for_aws.PNG)
