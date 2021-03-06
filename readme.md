@@ -111,6 +111,7 @@ resource "aws_iam_user" "the-accounts" {
 ### TerraForm Workspace commands
 
 - by default, 'default' workspce will be present
+- terraform.workspac will tell the workspace name
 
 ```
 terraform workspace -h
@@ -119,5 +120,36 @@ terraform workspace new dev
 terraform workspace new prd
 terraform workspace list
 terraform workspace select dev
+```
 
+### Terraform Remote State commands
+
+```
+terraform state list
+terraform state mv aws_instance.myec2 aws_instance.webapp
+terraform state pull
+terraform state rm aws_instance.myec2
+terraform state show aws_iam_user.lb
+```
+
+### Managing with Git
+
+```
+# To a Git REPO
+
+module "demomodule" {
+  source = "git::https://github.com/xxx/tmp-repo.git"
+}
+
+# To a particular Branch of a repo
+module "demomodule" {
+  source = "git::https://github.com/xxx/tmp-repo.git?ref=development"
+}
+
+```
+
+### Importing a Resource and mapping to state resource
+
+```
+terraform import aws_instance.myec2 i-041336ebb7e9bd20
 ```
