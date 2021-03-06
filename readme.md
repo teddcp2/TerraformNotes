@@ -153,3 +153,7 @@ module "demomodule" {
 ```
 terraform import aws_instance.myec2 i-041336ebb7e9bd20
 ```
+
+
+https://github.com/zealvora/terraform-beginner-to-advanced-resource
+
