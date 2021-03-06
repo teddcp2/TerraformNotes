@@ -8,13 +8,7 @@ terraform {
   backend "remote" {}
 }
 
-provider "aws" {
-
-  # Configuration options
-  region                  = "ap-south-1"
-  shared_credentials_file = "/Users/debasis panda/.aws/credentials"
-  profile                 = "default"
-}
+provider "aws" {}
 
 resource "aws_iam_user" "lb" {
   name = "remoteuser"
